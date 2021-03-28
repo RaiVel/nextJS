@@ -29,7 +29,9 @@ const Layout = ({ children }) => {
     return (
         <>
             <Navbar/>
-            { children }
+            <div style={{ textAlign: "center" }}>
+                { children }
+            </div>
         </>
         
     )

@@ -1,11 +1,17 @@
-import Layout from "../components/layout"
+import Layout from "../components/layout";
+import Error from "./_error";
 
-const page = (props) => {
-    console.log(props.pokeData)
+const page = ({pokeData, statusError}) => {
+    if(statusError > 200){
+        return(
+            <Error statusError = {statusError}/>
+        )
+    }
+
     return (
     <Layout>
         <span>pagina de blog</span>
-        { props.pokeData.abilities.map((ability, i) => (
+        { pokeData.abilities.map((ability, i) => (
             <p key={i}>
                {ability.ability.name} 
             </p>
@@ -15,12 +21,15 @@ const page = (props) => {
 }
 
 export async function getServerSideProps(){
-    const response  = await fetch("https://pokeapi.co/api/v2/pokemon/ditto");
-    const data = await response.json();
-    console.log(data)
+    let response  = await fetch("https://pokeapi.co/api/v2/pokemon/ditto");
+    let statusError = response.status;
+
+    response = statusError > 200 ? await response.text() : await response.json();
+
     return {
         props: {
-            pokeData: data
+            pokeData: response,
+            statusError,
         }
     }
 }
