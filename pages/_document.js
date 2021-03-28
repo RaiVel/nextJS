@@ -12,6 +12,7 @@ class MyDocument extends Document {
         <Head>
             <title>Mi portafolio</title>
             <meta name = "description" content="Pagina de prueba netxJS"/>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.css"/>
         </Head>
         <body>
           <Main />

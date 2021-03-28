@@ -1,20 +1,20 @@
 import Link from "next/link"
 
 const Navbar = () => (
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <Link href="/">
-            <a class="navbar-brand">Navbar</a>
+            <a className="navbar-brand">Navbar</a>
         </Link>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
+    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div className="navbar-nav">
             <Link href="/">
-                <a class="nav-link">Home</a>
+                <a className="nav-link">Home</a>
             </Link>
             <Link href="/blog">
-                <a class="nav-link">Blog</a>
+                <a className="nav-link">Blog</a>
             </Link>
         </div>
     </div>
